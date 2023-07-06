@@ -28,7 +28,6 @@ const StyledP = styled.p`
     font-family: Poppins;
     font-size: 16px;
     font-style: normal;
-    font-weight: 500;
     line-height: 26px;
 
 `
@@ -61,8 +60,7 @@ const StyledSpan = styled.a`
     font-weight: 600;
     cursor: pointer;
  
-   
-    
+
 `
 
 const StyledText = styled.p`
