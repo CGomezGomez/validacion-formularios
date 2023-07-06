@@ -44,7 +44,7 @@ const StyledButton = styled.button`
     color: #FFF;
     text-align: center;
     font-family: Poppins;
-    font-size: 15px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 700;
     line-height: 26px;
