@@ -60,7 +60,6 @@ const StyledSpan = styled.a`
     font-weight: 600;
     cursor: pointer;
  
-
 `
 
 const StyledText = styled.p`
@@ -74,7 +73,7 @@ const StyledText = styled.p`
     color: rgba(94, 84, 164, 1);
 
 `
-const StyledContainerForm = styled.div`
+const StyledContainerForm = styled.form`
 
     padding:1rem 2rem;
     width: 540px;
@@ -86,19 +85,50 @@ const StyledContainerForm = styled.div`
 
 const StyledInput = styled.input`
 
-box-shadow: 0px 8px 0px 0px rgba(0, 0, 0, 0.15);
-    border-radius: 10px;
-    width: 460px;
-    height: 56px;
-    border-radius: 5px;
-    border: 1px solid #5E54A4;
-    background: #FFF;
-    margin-bottom: 2rem;
-    text-indent: 20px ;
+  box-shadow: 0px 8px 0px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  width: 460px;
+  height: 56px;
+  border-radius: 5px;
+  border: 1px solid #5E54A4;
+  background: #FFF;
+  margin-bottom: 2rem;
+  text-indent: 20px;
+  padding-right: 28px;
+ 
 
 `
 
-const StyledBtn = styled.button`
+const StyledErrorContainer = styled.div`
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+    bottom: 30px;
+    right: 20px;
+
+`;
+
+const StyledError = styled.h4`
+   
+    font-size: 12px;
+    font-weight: 400;
+    text-align: end;
+    color: red;
+    
+
+`;
+
+const StyledImage = styled.img`
+    position: absolute;
+    right: 30px;
+    top: -100%;
+ 
+`;
+
+const StyledBtn = styled.input`
 
     width: 460px;
     height: 56px;
@@ -118,4 +148,4 @@ const StyledBtn = styled.button`
 `
 
 
-export {StyledContainer , StyledH2 , StyledP , StyledButton , StyledSpan ,  StyledInput , StyledBtn , StyledText , StyledContainerForm}
+export {StyledContainer , StyledH2 , StyledP , StyledButton , StyledSpan ,  StyledInput , StyledBtn , StyledText , StyledContainerForm , StyledErrorContainer , StyledError , StyledImage }
