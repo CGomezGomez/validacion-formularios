@@ -201,27 +201,35 @@ const checkLastName = ( nameValue , formValues , setFormValues ) => {
         });
      }
 }
-const checkEmail = ( nameValue , formValues , setFormValues ) => {
-
-
-        if(!nameValue){
-            setFormValues({
-                ...formValues , 
-                email:{
-                    value: '' , 
-                    error: 'El campo no puede estar vacio'
-                }
-            });
-        }else {
-            setFormValues({
-                ...formValues , 
-                email:{
-                    value: nameValue , 
-                    error: null
-                }
-            });
-        }
+const checkEmail = (nameValue, formValues, setFormValues) => {
+    const emailRegex = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+  
+    if (!nameValue) {
+      setFormValues({
+        ...formValues,
+        email: {
+          value: '',
+          error: 'El campo no puede estar vacío',
+        },
+      });
+    } else if (!emailRegex.test(nameValue)) {
+      setFormValues({
+        ...formValues,
+        email: {
+          value: nameValue,
+          error: 'Por favor, introduce un correo electrónico válido',
+        },
+      });
+    } else {
+      setFormValues({
+        ...formValues,
+        email: {
+          value: nameValue,
+          error: null,
+        },
+      });
     }
+  };
 
 const checkPass = ( nameValue , formValues , setFormValues ) => {
 
