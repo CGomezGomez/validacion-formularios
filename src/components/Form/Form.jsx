@@ -3,6 +3,8 @@ import { StyledContainer , StyledH2 , StyledP , StyledButton , StyledSpan , Styl
 
 const Form = () => {
 
+
+
     const [formValues , setFormValues ] = useState({
 
             firstName : {
@@ -51,7 +53,7 @@ const Form = () => {
             <div>
                 <StyledButton>Try is free 7 days <span>then $20/mo. thereafter</span></StyledButton>
 
-                <StyledContainerForm  onSubmit={event => event.preventDefault()}>
+                <StyledContainerForm  onSubmit={(event) => handleSubmit(event , formValues)} >
 
                     <div>
                         <StyledInput 
@@ -140,11 +142,22 @@ const Form = () => {
   )
 };
    
+const handleSubmit = (event , formValues) => {
+    event.preventDefault();
 
-const checkName = ( nameValue , formValues , setFormValues ) => {
+    const { firstName , lastName , email , password } = formValues
+
+    if ( !firstName.error && !lastName.error && !email.error && !password.error ) {
+
+        console.log('Enviado')
+    
+    }
+}
+
+const checkName = ( nameValue , formValues , setFormValues , isFormSubmitted ) => {
 
 
-    if(!nameValue){
+    if(!nameValue && isFormSubmitted){
         setFormValues({
             ...formValues , 
             firstName:{
@@ -152,6 +165,7 @@ const checkName = ( nameValue , formValues , setFormValues ) => {
                 error: 'El campo no puede estar vacio'
             }
         });
+
     }else if(/[0-9]/.test(nameValue)){
         setFormValues({
             ...formValues , 
@@ -172,10 +186,10 @@ const checkName = ( nameValue , formValues , setFormValues ) => {
 
 }
 
-const checkLastName = ( nameValue , formValues , setFormValues ) => {
+const checkLastName = ( nameValue , formValues , setFormValues , isFormSubmitted ) => {
 
 
-    if(!nameValue){
+    if(!nameValue && isFormSubmitted){
         setFormValues({
             ...formValues , 
             lastName:{
@@ -201,10 +215,10 @@ const checkLastName = ( nameValue , formValues , setFormValues ) => {
         });
      }
 }
-const checkEmail = (nameValue, formValues, setFormValues) => {
+const checkEmail = (nameValue, formValues, setFormValues , isFormSubmitted) => {
     const emailRegex = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
   
-    if (!nameValue) {
+    if (!nameValue && isFormSubmitted) {
       setFormValues({
         ...formValues,
         email: {
@@ -212,7 +226,7 @@ const checkEmail = (nameValue, formValues, setFormValues) => {
           error: 'El campo no puede estar vacío',
         },
       });
-    } else if (!emailRegex.test(nameValue)) {
+    } else if (!emailRegex.test(nameValue) && isFormSubmitted) {
       setFormValues({
         ...formValues,
         email: {
@@ -231,10 +245,10 @@ const checkEmail = (nameValue, formValues, setFormValues) => {
     }
   };
 
-const checkPass = ( nameValue , formValues , setFormValues ) => {
+const checkPass = ( nameValue , formValues , setFormValues , isFormSubmitted ) => {
 
 
-            if(!nameValue){
+            if(!nameValue && isFormSubmitted){
                 setFormValues({
                     ...formValues , 
                     password:{
