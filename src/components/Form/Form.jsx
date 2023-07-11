@@ -61,14 +61,14 @@ const Form = () => {
                         onInput={event => checkName(event.target.value, formValues, setFormValues)}
                         />
                         {firstName.error && (
-                            <>
+                       
                             <StyledErrorContainer >
                                 <StyledError >
                                     {firstName.error}
                                 </StyledError>
                                 <StyledImage  src="/public/images/icon-error.svg" alt="" />
                             </StyledErrorContainer>
-                            </>
+                         
                         
                         )}
                     </div>
@@ -80,14 +80,14 @@ const Form = () => {
                         onInput={event => checkLastName(event.target.value, formValues, setFormValues)}
                         />
                         {lastName.error && (
-                            <>
+                           
                             <StyledErrorContainer >
                                 <StyledError >
                                     {lastName.error}
                                 </StyledError>
                                 <StyledImage  src="/public/images/icon-error.svg" alt="" />
                             </StyledErrorContainer>
-                            </>
+                          
                         )}
                         
                     </div>
@@ -100,14 +100,14 @@ const Form = () => {
             
                         />
                         {email.error && (
-                            <>
+                           
                             <StyledErrorContainer >
                                 <StyledError >
                                     {email.error}
                                 </StyledError>
                                 <StyledImage  src="/public/images/icon-error.svg" alt="" />
                             </StyledErrorContainer>
-                            </>
+                          
                         )}
                     </div>
                     <div>
@@ -118,14 +118,14 @@ const Form = () => {
                        onInput={event => checkPass(event.target.value, formValues, setFormValues)}
                        />
                            {password.error && (
-                            <>
+                          
                             <StyledErrorContainer >
                                 <StyledError >
                                     {password.error}
                                 </StyledError>
                                 <StyledImage  src="/public/images/icon-error.svg" alt="" />
                             </StyledErrorContainer>
-                            </>
+                           
                         )}
                     </div>
                         <StyledBtn type='submit' value='CLAIM YOUR FREE TRIAL'></StyledBtn>

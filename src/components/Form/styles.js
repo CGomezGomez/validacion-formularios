@@ -77,7 +77,6 @@ const StyledContainerForm = styled.form`
 
     padding:1rem 2rem;
     width: 540px;
-    height: 474px;
     background: #FFF;
 
 `
@@ -104,17 +103,17 @@ const StyledErrorContainer = styled.div`
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 5px;
     position: relative;
+    gap: 5px;
     bottom: 30px;
     right: 20px;
 
 `;
 
-const StyledError = styled.h4`
+const StyledError = styled.span`
    
     font-size: 12px;
-    font-weight: 400;
+    font-weight: 600;
     text-align: end;
     color: red;
     
@@ -122,9 +121,10 @@ const StyledError = styled.h4`
 `;
 
 const StyledImage = styled.img`
+
     position: absolute;
     right: 30px;
-    top: -100%;
+    top: -270%;
  
 `;
 
